@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 
 export default function Confirm({setModalName}) {
   
@@ -7,7 +7,7 @@ export default function Confirm({setModalName}) {
       className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full"
       id="confirmModal"
       onClick={(e) => {
-        if (e.target.id == "confirmModal") 
+        if (e.target.id === "confirmModal") 
           setModalName('none')
       }}
     >

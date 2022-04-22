@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import Plus from '../assets/images/plus.png'
 import SelectToken from '../components/modals/SelectToken.modal'
 import Confirm from '../components/modals/Confirm.modal'
@@ -35,7 +35,7 @@ export default function Liquidity() {
                     {
                       payToken ? (
                         <>
-                        <img src={payToken.icon} width="45" className="mr-2" />
+                        <img src={payToken.icon} alt="" width="45" className="mr-2" />
                         <div className="">
                           <p className="font-bold">{payToken.name}</p>
                           <p className="text-sm text-gray-500">{payToken.unit}</p>
@@ -58,6 +58,7 @@ export default function Liquidity() {
               <div className="relative mt-4 mb-4" style={{height: 1, background: '#033C6C1A'}}>
                 <img
                   src={Plus}
+                  alt=""
                   onClick={() => {
                     const temp = payToken
                     setPayToken(getToken)
@@ -80,7 +81,7 @@ export default function Liquidity() {
                     {
                       getToken ? (
                         <>
-                        <img src={getToken.icon} width="45" className="mr-2" />
+                        <img src={getToken.icon} alt="" width="45" className="mr-2" />
                         <div className="">
                           <p className="font-bold">{getToken.name}</p>
                           <p className="text-sm text-gray-500">{getToken.unit}</p>
@@ -106,7 +107,7 @@ export default function Liquidity() {
         </div>
       </div>
       {
-        modalName == 'selectTokenModal' && 
+        modalName === 'selectTokenModal' && 
         <SelectToken 
           setModalName={setModalName}
           setPayToken={setPayToken}
@@ -115,13 +116,13 @@ export default function Liquidity() {
         />
       }
       {
-        modalName == 'manageTokenModal' && 
+        modalName === 'manageTokenModal' && 
         <ManageToken 
           setModalName={setModalName}
         />
       }
       {
-        modalName == 'confirmModal' && 
+        modalName === 'confirmModal' && 
         <Confirm 
           setModalName={setModalName}
         />

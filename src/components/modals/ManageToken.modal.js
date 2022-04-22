@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import BTC from '../../assets/images/BTC.png'
 import Tether from '../../assets/images/Tether.png'
 import Lite from '../../assets/images/Lite.png'
@@ -41,7 +41,7 @@ export default function ManageToken({setModalName}) {
       className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full"
       id="manageTokenModal"
       onClick={(e) => {
-        if (e.target.id == "manageTokenModal") 
+        if (e.target.id === "manageTokenModal") 
           setModalName('none')
       }}
     >
@@ -61,8 +61,8 @@ export default function ManageToken({setModalName}) {
             </span>
           </div>
           <div className="bg-gray-300 p-2 rounded-lg mb-4">
-            <button className={classNames('w-2/4', 'font-bold', 'p-2', 'rounded-lg', 'hover:text-gray-800', {'bg-white': manangeType == 'lists'}, {'hover:bg-gray-200': manangeType == 'lists'})} onClick={() => setManageType('lists')}>Lists</button>
-            <button className={classNames('w-2/4', 'font-bold', 'p-2', 'rounded-lg', 'hover:text-gray-800', {'bg-white': manangeType == 'tokens'}, {'hover:bg-gray-200': manangeType == 'tokens'})} onClick={() => setManageType('tokens')}>Tokens</button>
+            <button className={classNames('w-2/4', 'font-bold', 'p-2', 'rounded-lg', 'hover:text-gray-800', {'bg-white': manangeType === 'lists'}, {'hover:bg-gray-200': manangeType === 'lists'})} onClick={() => setManageType('lists')}>Lists</button>
+            <button className={classNames('w-2/4', 'font-bold', 'p-2', 'rounded-lg', 'hover:text-gray-800', {'bg-white': manangeType === 'tokens'}, {'hover:bg-gray-200': manangeType === 'tokens'})} onClick={() => setManageType('tokens')}>Tokens</button>
           </div>
           {
             manangeType === 'lists' ? (
@@ -73,7 +73,7 @@ export default function ManageToken({setModalName}) {
                     lists.sort((a, b) => a.allow < b.allow ? 1 : -1).map((list, index) => (
                       <div key={'list' + index} className={classNames('flex', 'justify-between', 'items-center', 'py-1', 'px-3', 'my-2', 'rounded-3xl', {'bg-blue-600': list.allow})}>
                         <div className={classNames('flex', 'items-center', 'my-2')}>
-                          <img src={list.icon} className="mr-2" />
+                          <img src={list.icon} className="mr-2" alt=""/>
                           <div>
                             <p className={classNames({'text-gray-600': !list.allow}, {'text-gray-200': list.allow})}>
                               {list.name}

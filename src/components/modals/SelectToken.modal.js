@@ -1,11 +1,11 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import BTC from '../../assets/images/BTC.png'
 import Tether from '../../assets/images/Tether.png'
 import Lite from '../../assets/images/Lite.png'
 import Xpocket from '../../assets/images/Xpocket.png'
 
 export default function SelectToken({setModalName, setPayToken, setGetToken, tokenType}) {
-  const [tokens, setTokens] = useState(
+  const [tokens] = useState(
     [
       {
         name: 'XPocket',
@@ -34,7 +34,7 @@ export default function SelectToken({setModalName, setPayToken, setGetToken, tok
       className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full"
       id="selectTokenModal"
       onClick={(e) => {
-        if (e.target.id == "selectTokenModal") 
+        if (e.target.id === "selectTokenModal") 
           setModalName('none')
       }}
     >
@@ -67,7 +67,7 @@ export default function SelectToken({setModalName, setPayToken, setGetToken, tok
                   className="flex items-center justify-between font-semibold py-3 px-5 my-2 cursor-pointer hover:bg-red-100 rounded-lg"
                 >
                   <div className="flex items-center">
-                    <img src={token.icon} className="mr-2" />
+                    <img src={token.icon} alt="" className="mr-2" />
                     {token.name}
                   </div>
                   <div>

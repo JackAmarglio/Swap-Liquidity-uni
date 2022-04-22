@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React  from 'react'
 import classNames from 'classnames'
-import { useScrollPosition, useScrollXPosition, useScrollYPosition } from 'react-use-scroll-position';
 
 import {
   useLocation,
